@@ -1,0 +1,25 @@
+textarea {
+	margin-bottom: 20px;
+	overflow: auto;
+	resize: none;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.clear {
+	clear: both;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+.upper {
+	text-transform: uppercase;
+}

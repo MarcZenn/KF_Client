@@ -1,0 +1,61 @@
+{
+  "name": "Kickfurther_Client_Side",
+  "title": "Kickfurther Client",
+  "version": "1.0.0",
+  "description": "Kickfurther Front-End Source Code",
+  "main": "index.js",
+  "engines": {
+    "node": "5.11.1"
+  },
+  "scripts": {
+    "postinstall": "cross-env NODE_ENV=production webpack --https --config ./webpack.production.config.js",
+    "start": "node app/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcZenn/MarcZennPersonalWebsite"
+  },
+  "author": "Marc Zenn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcZenn/KF_Client/issues"
+  },
+  "homepage": "",
+  "dependencies": {
+    "babel-loader": "^5.3.3",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "cross-env": "^3.1.2",
+    "css-loader": "^0.23.1",
+    "devicon": "^2.0.0",
+    "express": "^4.14.0",
+    "file-loader": "^0.9.0",
+    "mongoose": "^4.6.3",
+    "node-sass": "^3.8.0",
+    "react": "^15.0.1",
+    "react-bootstrap": "^0.30.2",
+    "react-cookie": "^0.4.8",
+    "react-dom": "^15.0.1",
+    "react-ga": "^2.1.2",
+    "react-hot-loader": "^1.3.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "react-waypoint": "^4.0.2",
+    "redux": "^3.6.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webfontloader": "^1.6.26",
+    "webpack": "^1.13.0",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.13.0"
+  },
+  "devDependencies": {
+    "cross-env": "^3.1.2",
+    "webpack": "^1.13.0",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.13.0"
+  }
+}
