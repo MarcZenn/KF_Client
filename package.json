@@ -9,9 +9,12 @@
   },
   "scripts": {
     "postinstall": "cross-env NODE_ENV=production webpack --https --config ./webpack.production.config.js",
-    "start": "if-env NODE_ENV=production && npm run start:prod  || npm run start:dev",
+    "start": "npm run start:prod",
     "start:dev": "node app/server.js",
-    "start:prod": "webpack && node app/server.js"
+    "start:prod": "npm run build && node bundle.js",
+    "build:client": "webpack",
+    "build:server": "webpack --config webpack.server.config.js",
+    "build": "npm run build:client && npm run build:server"
   },
   "repository": {
     "type": "git",

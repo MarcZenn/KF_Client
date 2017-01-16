@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "bf8b501db2e905643a6a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e80ef2b0d36469c35450"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -2074,15 +2074,7 @@
 	var ReactGA = __webpack_require__(592);
 	ReactGA.initialize('UA-84944356-1', {
 	  debug: true
-	});
-	
-	// Google Analytics - Log Page View
-	function logPageView() {
-	  ReactGA.set({ page: window.location.pathname });
-	  ReactGA.pageview(window.location.pathname);
-	}_reactDom2['default'].render(_react2['default'].createElement(_reactRouter.Router, { routes: _appRoutingRoutesJs2['default'], history: _reactRouter.browserHistory, onUpdate: function () {
-	    return window.scrollTo(0, 0);
-	  } }), document.getElementById('root'));
+	});_reactDom2['default'].render(_react2['default'].createElement(_reactRouter.Router, { routes: _appRoutingRoutesJs2['default'], history: _reactRouter.browserHistory }), document.getElementById('root'));
 	
 	// TODO:: mover over to custom routing solution.
 	// function renderComponent(component) {
