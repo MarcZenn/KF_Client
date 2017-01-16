@@ -15,25 +15,20 @@ const path = require('path');
 const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 const port = process.env.PORT || 9090;
 const cors = require('cors');
+var compression = require('compression')
 
 const app = express();
 
-// Configure CORS so as to remove the error: "A wildcard '*' cannot be used in the 'Access-Control-Allow-Origin' header when the credentials flag is set to true."
-/*
- *
- It seems that when you make a request that can change something (POST, PUT, etc), CORS rules require that the browser makes a preflight request (OPTIONS) before making the actual request. In Node, you have to specifically handle these OPTION requests and set 'Access-Control-Allow-Origin' to true manually. (can also do this per ajax call). You need to add handling for preflight OPTION requests
-*/
-// const corsOptions = {
-//   origin: 'http://localhost:9090/sockjs-node/info',
-// }
+// must come first!
+app.use(compression())
 
 app.use(cors({
-  "origin": "*",
+  "origin": "http://localhost:9090",
   "methods": "GET, HEAD, PUT, PATCH, POST, DELETE",
   "allowedHeaders": ["Origin, X-Requested-With, Accept, Content-Type, Authorization"],
+  "credentials": true,
   "preflightContinue": false
 }));
 
@@ -58,17 +53,25 @@ if(process.env.NODE_ENV !== 'production') {
     }
   }));
 
-  app.use(webpackHotMiddleware(compiler));
+  app.use(webpackHotMiddleware(compiler, {
+    log: console.log,
+    path: '/__webpack_hmr',
+    heartbeat: 10 * 1000
+  }));
 }
 
 app.use(bodyParser.json({type: '*/*', limit: '50mb'})); // Parse requests to JSON
 
 app.use(express.static(path.join(__dirname + '/../'))); // Serve from root directory
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '.././public/index.html'));
+});
+
 
 app.listen(port, function(error) {
   if (error) {
-    console.error(error);
+    console.log(error);
   } else {
     console.info("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", port, port);
   }

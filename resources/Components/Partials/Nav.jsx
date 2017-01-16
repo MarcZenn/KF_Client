@@ -3,49 +3,52 @@ import React, {Component} from 'react';
 
 
 // Components
-import {Col, Row, Grid} from 'react-bootstrap/lib';
-import {Link} from 'react-router';
+import {NavItem, Nav, Navbar, NavbarToggle, NavbarHeader, MenuItem, NavDropdown, NavbarBrand, NavbarCollapse} from 'react-bootstrap/lib';
+import {LinkContainer} from 'react-router-bootstrap';
 
 
-class Nav extends Component {
+class MainNav extends Component {
   render(){
     return(
-      <nav className="site clear main-nav">
-        <ul>
-          <Grid>
-            <Row className="show-grid">
-              <Col md={6}>
-                <Link to="/">
-                  <li>
-                    <img src="/public/images/symbol-logo-white.png"  />
-                  </li>
-                </Link>
-              </Col>
-              <Col md={6}>
-                <Col md={3} xs={12}>
-                  <li><Link to="/companies">Companies</Link></li>
-                </Col>
-                <Col md={3} xs={12}>
-                  <li><Link to="/works">Work</Link></li>
-                </Col>
-                <Col md={3} xs={12}>
-                  <li><Link to="/about">About</Link></li>
-                </Col>
-                <Col md={3} xs={12}>
-                  <li><Link to="/contact">Contact</Link></li>
-                </Col>
-              </Col>
-            </Row>
-          </Grid>
-        </ul>
-      </nav>
+      <Navbar className="main-nav" inverse collapseOnSelect>
+        <Navbar.Header>
+          <Navbar.Brand>
+              <a href="/"><img src="/public/images/kickfurther-symbol-logo.png"  /></a>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+          <Nav>
+            <LinkContainer to={{ pathname: '/browse' }}>
+              <NavItem eventKey={1} href="#">Browse</NavItem>
+            </LinkContainer>
+            <NavItem eventKey={2} href="#">Create A Business Account</NavItem>
+          </Nav>
+          <Nav pullRight>
+            <LinkContainer to={{ pathname: '/login' }}>
+              <NavItem eventKey={1}>Login</NavItem>
+            </LinkContainer>
+            <LinkContainer to={{ pathname: '/register' }}>
+              <NavItem eventKey={2}>Signup</NavItem>
+            </LinkContainer>
+            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+              <MenuItem eventKey={3.1}>Dashboard</MenuItem>
+              <MenuItem eventKey={3.2}>Consignments</MenuItem>
+              <MenuItem eventKey={3.3}>Store</MenuItem>
+              <MenuItem eventKey={3.3}>Account</MenuItem>
+              <MenuItem divider />
+              <MenuItem eventKey={3.3}>Logout</MenuItem>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     )
   }
 }
 
-Nav.propTypes = {
+MainNav.propTypes = {
  // propTypes
 }
 
 
-export default Nav
+export default MainNav

@@ -9,49 +9,45 @@ import {Link} from 'react-router';
 class Footer extends Component {
  render (){
    return (
-     <footer className="footer">
+     <footer className="main-footer">
       <Grid>
         <Row className="show-grid">
           <Col md={ 3 } xs={ 12 } >
             <div>
-              <img src="/public/images/symbol-logo-white.png"  />
-              <p><i className="fa fa-copyright" aria-hidden="true"></i> 2016 MARC ZENN ALL RIGHTS RESERVED</p>
+              <img src="/public/images/kickfurther-symbol-logo.png"  />
+              <p><i className="fa fa-copyright" aria-hidden="true"></i> 2016 KICKFURTHER ALL RIGHTS RESERVED</p>
             </div>
           </Col>
-          <Col md={ 9 } xs={ 12 } >
-              <div className="home-footer-list">
-              <Row>
-                <ul>
-                  <Col xs={ 2 }>
-                    <li><Link to="/companies">Companies</Link></li>
-                  </Col>
-                  <Col  xs={ 2 }>
-                    <li><Link to="/professional-contributions">Professional</Link></li>
-                  </Col>
-                  <Col  xs={ 2 }>
-                    <li><Link to="/personal-projects">Personal</Link></li>
-                  </Col>
-                  <Col  xs={ 2 }>
-                    <li><Link to="/about">About</Link></li>
-                  </Col>
-                  <Col  xs={ 2 }>
-                    <li><Link to="/contact">Contact</Link></li>
-                  </Col>
-                  <Col  xs={ 2 }>
-                    <li><Link to="/privacy-policy">Privacy</Link></li>
-                  </Col>
-                  <Col  xs={ 2 }>
-                    <li><Link to="https://github.com/MarcZenn">Github</Link></li>
-                  </Col>
-                  <Col  xs={ 2 }>
-                    <li><Link to="https://www.linkedin.com/in/marcosmartinez2">LinkedIn</Link></li>
-                  </Col>
-                  <Col  xs={ 2 }>
-                    <li><Link to="/terms-of-use">Terms of Use</Link></li>
-                  </Col>
-                </ul>
-              </Row>
-              </div>
+          <Col md={ 3 } xs={ 12 } >
+            <ul>
+              <li><a href="/about">About</a></li>
+              <li><a href="/how-it-works">How it Works</a></li>
+              <li><a href="/channel-partners">Channel Partners</a></li>
+              <li><a href="/business-resources">Business Resources</a></li>
+              <li><a href="/glossary">Glossary</a></li>
+              <li><a href="/store-how-it-works">Store</a></li>
+              <li><a href="/press">Press</a></li>
+              <li><a href="/blog">Blog</a></li>
+            </ul>
+          </Col>
+          <Col md={ 3 } xs={ 12 } >
+            <ul>
+              <li>Contact</li>
+              <li>E-mail</li>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>Join Mailing List</li>
+            </ul>
+          </Col>
+          <Col md={ 3 } xs={ 12 } >
+            <ul>
+              <li>Screening Process</li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li>Terms of Use</li>
+              <li>Store Terms</li>
+              <li>Expectations</li>
+            </ul>
           </Col>
         </Row>
       </Grid>

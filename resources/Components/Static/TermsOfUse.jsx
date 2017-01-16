@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 
 // Components
 import {Col, Row, Grid} from 'react-bootstrap/lib';
-import Spinner from '../.././Partials/Spinner.jsx';
+import Spinner from '.././Partials/Spinner.jsx';
 
 
 class Resume extends Component {

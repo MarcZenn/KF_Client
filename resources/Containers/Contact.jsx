@@ -9,6 +9,8 @@ import {Col, Row, Grid} from 'react-bootstrap/lib';
 import Nav from '.././Components/Partials/Nav.jsx';
 import Footer from '.././Components/Partials/Footer.jsx';
 
+
+// A container does data fetching and then renders its corresponding sub-component following container component pattern - https://medium.com/@learnreact/container-components-c0e67432e005#.qxhuqiw20
 class Contact extends Component {
 
   constructor() {

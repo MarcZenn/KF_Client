@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 
 // Import Components
-import Nav from '.././Partials/Nav.jsx';
+import MainNav from '.././Partials/Nav.jsx';
 import Footer from '.././Partials/Footer.jsx';
 import {Col, Row, Grid} from 'react-bootstrap/lib';
 import {Link} from 'react-router';
@@ -12,10 +12,10 @@ class Home extends Component {
   render()
   {
     return (
-      <section className="homepage-content">
-        <Nav />
+      <section>
+        <MainNav />
 
-        <h1>home</h1>
+        <h1 className="placholder">Home</h1>
 
         <Footer />
       </section>

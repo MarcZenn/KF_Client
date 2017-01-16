@@ -4,9 +4,11 @@ var webpack = require('webpack');
 
 // Exported but not sure where this is being imported?
 module.exports = {
+  // Having devtools option as `source-map` generates the source map files which helps to debug on development. You can simply tack on more loaders as needed like the SASS loader below.
+  devtool: 'source-map',
   // First property references the entry file. Then specifies the output file.
   entry: [
-    './resources/src/index', // actual entry point.
+    './resources/src/index.js', // actual entry point.
   ],
   output: {
     path: __dirname,
@@ -16,8 +18,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
-  // Tell webpack to take .jsx file and pass them to Bable for transpiling. The way you do this is with loaders. Having devtools option as `source-map` generates the source map files which helps to debug on development. You can simply tack on more loaders as needed like the SASS loader below.
-  devtool: 'source-map',
+  // Tell webpack to take .jsx file and pass them to Bable for transpiling. The way you do this is with loaders.
   module: {
     loaders: [
       {
@@ -26,7 +27,7 @@ module.exports = {
         include: path.join(__dirname),
         resolve: {
           alias: {
-            images: path.join(__dirname, 'public/images')
+            images: path.join(__dirname, './public/images')
           }
         }
       },
@@ -45,6 +46,9 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    })
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin()
   ]
 }
