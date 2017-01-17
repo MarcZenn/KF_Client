@@ -2,6 +2,9 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
+  // By default, Webpack is set up to target the browser,
+  // not a Node environment. Try setting target in your config:
+  target: 'web',
   // Having devtools option as `source-map` generates the source map files which helps to debug on development. You can simply tack on more loaders as needed.
   devtool: 'source-map',
   // First property references the entry file. Then specifies the output file as well as configuration for webpack hot reload of assets.
@@ -33,9 +36,9 @@ module.exports = {
         }
       },
       {
-        test: /\.jsx?$/, // RegEx that webpack uses to determine if .js/.jsx files should be transpiled.
-        loaders: ['react-hot','babel'], // Loaders to be used. Must be installed.
-        exclude: /node_modules/ // exclude
+        test: /\.jsx?/, // RegEx that webpack uses to determine if .js/.jsx files should be transpiled.
+        exclude: /node_modules/, // exclude
+        loaders: ['react-hot', 'babel'] // Loaders to be used.
       },
       {
         test: /\.(eot|woff|png|jpg|gif|svg|ttf)$/,
@@ -44,6 +47,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      "process.env": {BROWSER: JSON.stringify(true)}
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]

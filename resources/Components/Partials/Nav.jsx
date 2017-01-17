@@ -20,9 +20,9 @@ class MainNav extends Component {
         <Navbar.Collapse>
           <Nav>
             <LinkContainer to={{ pathname: '/browse' }}>
-              <NavItem eventKey={1} href="#">Browse</NavItem>
+              <NavItem eventKey={1}>Browse</NavItem>
             </LinkContainer>
-            <NavItem eventKey={2} href="#">Create A Business Account</NavItem>
+            <NavItem eventKey={2}>Create A Business Account</NavItem>
           </Nav>
           <Nav pullRight>
             <LinkContainer to={{ pathname: '/login' }}>

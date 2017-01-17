@@ -3,7 +3,7 @@ import React from 'react';
 
 //Components
 import {Route} from 'react-router';
-import PageNotFound from '../../.././resources/Components/ErrorPages/404.jsx';
+import PageNotFound from '../../.././resources/Components/Errors/404.jsx';
 
 const authRoutes = (
   <Route>

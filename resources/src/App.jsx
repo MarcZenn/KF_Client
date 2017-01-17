@@ -15,16 +15,19 @@ import React, {Component} from 'react';
 // Front-end session data
 import cookie from 'react-cookie';
 
+
 // Google Fonts Package. - For new fonts add to array.
-const WebFont = require('webfontloader');
- WebFont.load({
-   google: {
-     families: ['Raleway', 'Roboto Condensed', 'Bungee Hairline']
-   }
- });
+// const WebFont = require('webfontloader');
+//  WebFont.load({
+//    google: {
+//      families: ['Raleway', 'Roboto Condensed', 'Bungee Hairline']
+//    }
+//  });
 
 // Master Styles
-require('../assets/scss/app.scss');
+if(process.env.BROWSER) {
+  require('../.././public/app.scss');
+}
 
 
 // Outermost Parent Component

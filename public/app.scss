@@ -1,0 +1,15 @@
+// Variables & Configs
+@import './stylesheets/variables/colors';
+@import './stylesheets/variables/fonts';
+@import './stylesheets/alignments';
+@import './stylesheets/global_selectors';
+@import './stylesheets/error_pages';
+
+
+// Modules(pages) & Partials
+@import '.././resources/assets/scss/home';
+@import '.././resources/assets/scss/static';
+@import '.././resources/assets/scss/partials';
+
+
+// Third-Party/External

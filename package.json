@@ -4,40 +4,52 @@
   "version": "1.0.0",
   "description": "Kickfurther Front-End Source Code",
   "main": "index.js",
+  "babel": {
+    "env": {
+      "production": {
+        "presets": [
+          "es2015",
+          "react"
+        ]
+      }
+    }
+  },
   "engines": {
     "node": "5.11.1"
   },
   "scripts": {
     "postinstall": "cross-env NODE_ENV=production webpack --https --config ./webpack.production.config.js",
-    "start": "npm run start:prod",
-    "start:dev": "node app/server.js",
-    "start:prod": "npm run build && node bundle.js",
-    "build:client": "webpack",
-    "build:server": "webpack --config webpack.server.config.js",
-    "build": "npm run build:client && npm run build:server"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "node app/dev_server.js",
+    "start:prod": "babel-node app/server.js --presets es2015,stage-2"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/MarcZenn/KF_Client"
   },
-  "author": "Marc Zenn",
+  "author": "Kickfurther",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MarcZenn/KF_Client/issues"
   },
   "homepage": "",
   "dependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^5.8.38",
     "babel-loader": "^5.3.3",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-2": "^6.18.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "cross-env": "^3.1.2",
     "css-loader": "^0.23.1",
+    "ejs": "^2.5.5",
     "express": "^4.14.0",
     "file-loader": "^0.9.0",
     "history": "^4.5.1",
     "if-env": "^1.0.0",
     "node-sass": "^3.8.0",
-    "path-to-regexp": "^1.7.0",
     "react": "^15.0.1",
     "react-bootstrap": "^0.30.2",
     "react-cookie": "^0.4.8",

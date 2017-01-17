@@ -20,14 +20,14 @@ class Footer extends Component {
           </Col>
           <Col md={ 3 } xs={ 12 } >
             <ul>
-              <li><a href="/about">About</a></li>
-              <li><a href="/how-it-works">How it Works</a></li>
-              <li><a href="/channel-partners">Channel Partners</a></li>
-              <li><a href="/business-resources">Business Resources</a></li>
-              <li><a href="/glossary">Glossary</a></li>
-              <li><a href="/store-how-it-works">Store</a></li>
-              <li><a href="/press">Press</a></li>
-              <li><a href="/blog">Blog</a></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/how-it-works">How it Works</Link></li>
+              <li><Link to="/channel-partners">Channel Partners</Link></li>
+              <li><Link to="/business-resources">Business Resources</Link></li>
+              <li><Link to="/glossary">Glossary</Link></li>
+              <li><Link to="/store-how-it-works">Store</Link></li>
+              <li><Link to="/press">Press</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
             </ul>
           </Col>
           <Col md={ 3 } xs={ 12 } >
@@ -43,7 +43,7 @@ class Footer extends Component {
           <Col md={ 3 } xs={ 12 } >
             <ul>
               <li>Screening Process</li>
-              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
               <li>Terms of Use</li>
               <li>Store Terms</li>
               <li>Expectations</li>
