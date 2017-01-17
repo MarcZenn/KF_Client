@@ -4,6 +4,15 @@
   "version": "1.0.0",
   "description": "Kickfurther Front-End Source Code",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarcZenn/KF_Client"
+  },
+  "author": "Kickfurther",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcZenn/KF_Client/issues"
+  },
   "babel": {
     "env": {
       "production": {
@@ -18,19 +27,9 @@
     "node": "5.11.1"
   },
   "scripts": {
-    "postinstall": "cross-env NODE_ENV=production webpack --https --config ./webpack.production.config.js",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:dev": "node app/dev_server.js",
-    "start:prod": "babel-node app/server.js --presets es2015,stage-2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MarcZenn/KF_Client"
-  },
-  "author": "Kickfurther",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MarcZenn/KF_Client/issues"
+    "start:dev": "node app/devserver.js",
+    "start:prod": "babel-node app/prodserver.js --presets es2015,stage-2"
   },
   "homepage": "",
   "dependencies": {
@@ -40,6 +39,7 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-2": "^6.18.0",
+    "babel-register": "^6.18.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "cross-env": "^3.1.2",
@@ -68,7 +68,8 @@
     "webpack": "^1.13.0",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^1.14.1",
-    "webpack-hot-middleware": "^2.13.0"
+    "webpack-hot-middleware": "^2.13.0",
+    "webpack-node-externals": "^1.5.4"
   },
   "devDependencies": {
     "cross-env": "^3.1.2",

@@ -11,6 +11,11 @@
   $ npm start
 
 -------------------------------------------------------------------------------- */
+'use strict';
+require('babel-register')({
+	presets: ['react']
+});
+
 process.env.BROWSER == false;
 const path = require('path');
 const express = require('express');
