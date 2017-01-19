@@ -42,7 +42,7 @@ if(process.env.NODE_ENV !== 'production') {
         {
           test: /\.jsx?/, // RegEx that webpack uses to determine if .js/.jsx files should be transpiled.
           exclude: /node_modules/, // exclude
-          loaders: ['react-hot', 'babel-loader'] // Loaders to be used.
+          loaders: ['react-hot', 'babel'] // Loaders to be used.
         },
         {
           test: /\.(eot|woff|png|jpg|gif|svg|ttf)$/,
@@ -94,10 +94,7 @@ if(process.env.NODE_ENV !== 'production') {
         {
           test: /\.jsx?/, // RegEx that webpack uses to determine if .js/.jsx files should be transpiled.
           exclude: /node_modules/, // exclude
-          loaders: ['babel-loader'], // Loaders to be used.
-          query: {
-            presets: ['react', 'es2015']
-          }
+          loaders: ['babel-loader'] // Loaders to be used.
         },
         {
           test: /\.(eot|woff|png|jpg|gif|svg|ttf)$/,
